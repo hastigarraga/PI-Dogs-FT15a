@@ -1,21 +1,9 @@
-const { Router } = require('express');
-const router = Router();
-// Importar todos los routers;
-// Ejemplo: const authRouter = require('./auth.js');
-
+// const { Router } = require('express');
+// const router = Router();
 const { Dog , Temperament } = require('../db.js');
 require("dotenv").config();
 const axios = require('axios'); 
 const { URL_API , API_KEY } = process.env
-
-
-const routeDogs = require('./dogs');
-
-
-
-// Configurar los routers
-// Ejemplo: router.use('/auth', authRouter); 
-router.use("/dogs", routeDogs);
 
 
 const getApiInfo = async() => {
@@ -53,44 +41,30 @@ const getAllDogs = async() => {
     return infoTotal;
 }  
 
-router.get('/dogs', async (req, res) => { 
-    const {name} = req.query;
-    const dogsTotal = await getAllDogs();
-    if(name){
-            let dogName = await dogsTotal.filter(d => d.name.toLowerCase().includes(name.toLowerCase()));
-            dogName.length ?  
-        res.status(200).send(dogName) :
-        res.status(404).send('Sorry, the puppy went for a walk :(')
-    }else {
-        res.status(200).send(dogsTotal);
-    }
+// router.get('/dogs', async (req, res) => { 
+//     const {name} = req.query;
+//     const dogsTotal = await getAllDogs();
+//     if(name){
+    //         let dogName = await dogsTotal.filter(d => d.name.toLowerCase().includes(name.toLowerCase()));
+    //         dogName.length ?  
+//         res.status(200).send(dogName) :
+//         res.status(404).send('The puppy went for a walk')
+//     }else {
+//         res.status(200).send(dogsTotal);
+//     }
 
-}); 
-
-
-
-
-
-
-
-
+// }); 
+    
+    
+    
+    
+    
+    
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-module.exports = router;
+module.exports = {
+    getApiInfo, 
+    getDbInfo, 
+    getAllDogs, 
+    // router
+};
