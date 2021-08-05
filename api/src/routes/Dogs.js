@@ -1,13 +1,7 @@
 const { Router } = require('express');
 const router = Router();
 
-const { Dog , Temperament } = require('../db.js');
-require("dotenv").config();
-const axios = require('axios'); 
-const { URL_API , API_KEY } = process.env
-const { apiData, dataDb, allDogs } = require('../utils/dataDogs')
-
-
+const { apiData, dataDb, allDogs } = require('../utils/dataDogs');
 
 
 router.get('/dogs', async (req, res) => { 
@@ -23,7 +17,6 @@ router.get('/dogs', async (req, res) => {
     }
 
 });  
-
 
 
 module.exports = router;

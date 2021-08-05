@@ -2,11 +2,6 @@ const { Router } = require('express');
 const router = Router();
 
 const {Dog, Temperament, dog_temperament } = require('../db.js');
-require("dotenv").config();
-const axios = require('axios'); 
-const { URL_API , API_KEY } = process.env;
-
-
 
 
 router.post('/dog', async (req, res) => {
@@ -31,7 +26,7 @@ router.post('/dog', async (req, res) => {
     });
 
 dogCreated.addTemperament(dogDb); 
-    res.send('Puppy created');
+    res.send('Puppy created :)');
 });
 
 

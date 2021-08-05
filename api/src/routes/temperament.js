@@ -31,8 +31,7 @@ router.get('/temperament', async (req, res) => {
             where: {name: finalArrayTemps[i]}
         })
     };    
-    
-    
+        
     const allTemperaments = await Temperament.findAll();
     res.send(allTemperaments)
 
