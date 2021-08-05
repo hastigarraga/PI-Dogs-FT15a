@@ -6,7 +6,7 @@ const axios = require('axios');
 const { URL_API , API_KEY } = process.env
 
 
-const getApiInfo = async() => {
+const apiData = async() => {
     const api = await axios.get(`${URL_API}?api_key=${API_KEY}`);
     const apiInfo = await api.data.map(el =>{
         return { 
@@ -20,7 +20,7 @@ const getApiInfo = async() => {
     return apiInfo;
 }; 
 
-const getDbInfo = async() => {
+const dataDb = async() => {
     return await Dog.findAll({ 
         include: {
             model: Temperament,
@@ -34,16 +34,16 @@ const getDbInfo = async() => {
 }; 
 
 
-const getAllDogs = async() => {
-    const apiInfo = await getApiInfo();
-    const dbInfo = await getDbInfo();
+const allDogs = async() => {
+    const apiInfo = await apiData();
+    const dbInfo = await dataDb();
     const infoTotal = apiInfo.concat(dbInfo); 
     return infoTotal;
 }  
 
 // router.get('/dogs', async (req, res) => { 
 //     const {name} = req.query;
-//     const dogsTotal = await getAllDogs();
+//     const dogsTotal = await allDogs();
 //     if(name){
     //         let dogName = await dogsTotal.filter(d => d.name.toLowerCase().includes(name.toLowerCase()));
     //         dogName.length ?  
@@ -63,8 +63,7 @@ const getAllDogs = async() => {
 
 
 module.exports = {
-    getApiInfo, 
-    getDbInfo, 
-    getAllDogs, 
-    // router
+    apiData, 
+    dataDb, 
+    allDogs, 
 };
