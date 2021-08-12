@@ -7,6 +7,6 @@ export function getDogs(){
             type: 'GET_DOGS', 
             payload: json.data
     
-        })
+        }) 
     };
 }
