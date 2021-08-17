@@ -1,0 +1,29 @@
+.title {
+    text-decoration: 'none';
+    padding: 10px;
+    font-size: 25px;
+    color: #24588b;
+    /* text-transform: uppercase; */
+    font-weight: 1000;
+    /* font-family: "Courier New"; */
+   
+}
+
+.titleTemps {
+    font-size: 20px;
+    color: #043261;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: 'none';
+    
+}
+.image {
+    height: 230px;
+    width: 230px;
+    border-color: black;
+    border-radius: 10%;
+    justify-content: center;
+    
+    
+}
+
+
