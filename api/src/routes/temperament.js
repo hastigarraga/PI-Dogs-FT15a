@@ -24,7 +24,7 @@ router.get('/temperament', async (req, res) => {
         return tempsEnds.indexOf(item) === index;
       }) 
     
-    console.log(finalArrayTemps)
+    // console.log(finalArrayTemps)
        
     for (let i = 0 ; i < finalArrayTemps.length ; i++) {
         Temperament.findOrCreate({
