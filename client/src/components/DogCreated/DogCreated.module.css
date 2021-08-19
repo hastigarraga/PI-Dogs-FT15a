@@ -4,23 +4,29 @@
     /* background-color: rgba(165, 42, 42, 0.918); */
     /* background-color: transparent; */
     /* color: wheat; */
-    color: brown;
     border-radius: 3px;
     padding-left: 3px;
     padding-bottom: 3px;
     font-weight: bolder;
+    
 }
 .temptContainer { 
     background-color: #ffffff78;  
-    list-style:none;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    justify-items: center;
+    /* list-style:none; */
+    /* display: grid; */
+    /* grid-template-columns: repeat(6, 1fr); */
+    /* justify-items: center; */
     color: #ebbb37;
     font-weight: bolder;
-    margin-top: 50px;
+    position: relative; left:42%; bottom: -5%;
+    margin-top: 30px; 
+    width: 15%;
+    padding-bottom: 5px;
     margin-right: 10px;
     text-shadow: 0 1px 1px rgb(12, 12, 12);
+    
+    /* position: absolute; */
+    
 }
 .legend{
     color: #ebbb37; 
@@ -35,28 +41,68 @@
 }
 
 .l {
-    display: flex;
-    align-items: center;
+   background-color: #ddd4d478;  
+   color: #ebbb37;
+   text-shadow: 0 1px 1px rgb(12, 12, 12);  
+   text-decoration: none;
+       
 }
 .input {
-    border: none; 
-    letter-spacing: 2px; 
-    text-transform: uppercase; 
+    border: none;  
     cursor: pointer; 
     padding: 5px;
     margin-top: 10px; 
     border-radius: 5px;
-    color: white;
+    color: rgb(161, 161, 161);
 }
 .input:hover{
     background-color: #ebbb37;
     
 }
+/* .maxmin{
+    width: 75px;
+    margin-left: 2px;
+    margin-right: 1px;
+    border: none;  
+    cursor: pointer; 
+    padding: 4px;
+    margin-top: 10px; 
+    border-radius: 5px;
+    color: rgb(146, 144, 144);
+
+} */
+.maxmin:hover{
+    background-color: #ebbb37;
+    
+}
+.submit{
+    position: relative; left: 50%; bottom: -5%;
+    width: 15%;
+    font-family:Georgia;
+    background: linear-gradient(#f0ddaa, #a58a40);
+    border: none; 
+    text-transform: uppercase; 
+    cursor: pointer; 
+    padding: 15px;
+    margin-top: 30px; 
+    border-radius: 5px;
+    color: solid black;
+    border-color: solid black;  
+    font-weight: 700; 
+    
+}
+.submit:hover{
+    color: rgb(255, 249, 249);
+    border-color: solid black;
+    background-color: transparent;
+}
+
 .back{
-    position: relative; left: 40%; bottom: -5%;
+    position: relative; right: 49%; bottom: -5%;    
     font-family:Georgia;
     color: solid black;
     border-color: solid black;
+    text-transform: uppercase;
     /* background-color: rgb(207, 170, 89); */
     background: linear-gradient(#f0ddaa, #a58a40);
     border-radius: 9px;
@@ -67,5 +113,20 @@
     font-weight: 800;
     width: 200px;
     height: 50px;
+    
+
+} 
+.li{
+    list-style:none; 
+    color: #ebbb37;
 
 }
+/* .danger {
+    color: red;
+    font-size: 15px;
+}
+
+.inputDanger {
+    border-color: red;
+    list-style: none;
+} */

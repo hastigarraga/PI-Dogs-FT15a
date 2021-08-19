@@ -1,9 +1,10 @@
 const initialState = {
-    dogs : [],   
+    dogs : [],
+    allDogs : [],   
     orderDogs : [],
     weightDogs : [], 
-    temperaments : [],
-    // detail : [],
+    temperament : [],
+    detail : [],
 
 };
 
@@ -12,20 +13,29 @@ function rootReducer(state = initialState, action) {
     // eslint-disable-next-line default-case
     switch (action.type) {
         case 'GET_DOGS': 
-        console.log(action.payload)
             return {
                 ...state,
                 dogs: action.payload,
-                // allDogs: action.payload
+                allDogs: action.payload
             };
 
         case 'GET_TEMPERAMENTS': 
+        // console.log("reducer", action.payload)
             return {
                 ...state,
-                temperaments: action.payload,
+                temperament: action.payload,
 
             };
+            
+        case 'FILTER_DOGS_CREATED':
+            // const allDogs = state.allDogs;
+            const dogsFiltered = action.payload === 'Created' ? state.allDogs.filter(d => d.createInDb) : state.allDogs.filter(d => !d.createInDb);
+            return {
+                ...state,
+                dogs: action.payload === 'All' ? state.allDogs : dogsFiltered
 
+            };          
+        
         case 'DOG_DETAIL':
             return {
                 ...state,
@@ -40,7 +50,7 @@ function rootReducer(state = initialState, action) {
 
         case 'POST_DOGS': 
             return {
-                ...state
+                ...state,
 
             }
             

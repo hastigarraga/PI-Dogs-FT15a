@@ -2,7 +2,8 @@ import './App.css';
 import {BrowserRouter, Route, Switch} from 'react-router-dom'; 
 import LandingPage from './components/LandingPage/LandingPage.jsx' 
 import Home from './components/Home/Home.jsx' 
-import DogCreated from './components/DogCreated/DogCreated.jsx'
+import DogCreated from './components/DogCreated/DogCreated.jsx';
+import Detail from './components/Detail/Detail.jsx';
 
 function App() {
   return ( 
@@ -11,7 +12,8 @@ function App() {
         <Switch>
           <Route exact path="/" component = {LandingPage}/>
           <Route path="/home" component = {Home}/> 
-          <Route path ="/doggie" component = {DogCreated}/>
+          <Route path ="/dog" component = {DogCreated}/>
+          <Route exact path='/home:id' component={Detail}></Route>
         </Switch>
       </div>
     </BrowserRouter>

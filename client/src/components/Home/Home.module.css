@@ -13,7 +13,7 @@
     padding-left: 5px;
     padding-right: 10px;
     justify-content:center;
-    margin-left: 100px;
+    margin-left: 70px;
     /* background-color: rgb(253, 226, 182);
     background-color: rgb(184, 226, 243); */
     
@@ -22,7 +22,7 @@
 
 .contenedor:hover {
     transform: scale(1.05);
-    box-shadow: 0 5px 10px rgb(196, 192, 192);
+    box-shadow: 0 5px 10px rgb(255, 251, 251);
 }
 
 
@@ -55,7 +55,7 @@
 
 }
 .button {
-    position: relative; right: 40%; bottom: -5%;
+    position: relative; right: 39%; bottom: -5%;
     font-family:Georgia;
     color: solid black;
     border-color: solid black;
@@ -69,12 +69,31 @@
     font-weight: 800;
     width: 60px;
     height: 40px;
+    
 }
   
 .button:hover{
     color: rgb(255, 249, 249);
     border-color: solid black;
     background-color: transparent;
+}
+.temptContainer { 
+    position: relative; left: 40%; bottom: -5%;
+    font-family:Georgia;
+    /* background-color: rgb(207, 170, 89); */
+    background: linear-gradient(#f0ddaa, #a58a40);
+    border-radius: 9px;
+    margin-top: 15px;
+    margin-left: 10px;
+    color: solid black;
+    border-color: solid black;
+    font-size: 13px;
+    font-weight: 800;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    
+    
 }
   
 /* .button2 {
@@ -104,10 +123,16 @@
     color: solid black;
     font-size: 13px;
     font-weight: 800;
-    width: 200px;
+    width: 150px;
     height: 50px;
+    cursor: pointer;
     
 
+}
+.reload:hover{
+    color: rgb(255, 249, 249);
+    border-color: solid black;
+    background-color: transparent;
 }
 .created{
     text-decoration: none;
@@ -126,5 +151,27 @@
     height: 50px;
     
     
+}
+.back{
+    position: relative; right: 42%; bottom: -5%;
+    font-family:Georgia;
+    color: solid black;
+    border-color: solid black;
+    /* background-color: rgb(207, 170, 89); */
+    background: linear-gradient(#f0ddaa, #a58a40);
+    border-radius: 9px;
+    margin-top: 15px;
+    /* margin-left: 10px;  */
+    margin-block-end: 10px;
+    color: solid black;
+    font-size: 13px;
+    font-weight: 800;
+    width: 150px;
+    height: 50px;
+}
+.back:hover{
+    color: rgb(255, 249, 249);
+    border-color: solid black;
+    background-color: transparent;
 }
 

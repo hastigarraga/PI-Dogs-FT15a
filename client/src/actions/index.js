@@ -22,7 +22,8 @@ export function dogDetail(id) {
             console.log(error);
         }
     }
-}
+};
+
 
 export function getNameDogs (name){ 
     return async function(dispatch) { 
@@ -32,8 +33,7 @@ export function getNameDogs (name){
             payload: json.data
         });
 
-    };
-    
+    };    
 }; 
 
 export function getTemperaments() {
@@ -48,9 +48,17 @@ export function getTemperaments() {
     }
 };
 
+export function filterDogsCreated (payload){
+    return {
+        type: 'FILTER_DOGS_CREATED',
+        payload
+    }
+};
+
+
 export function postDogs(payload) {
     return async function (dispatch){
-        var json = await axios.post("http://localhost:3001/dogs/",payload); 
+        var json = await axios.post("http://localhost:3001/dog/",payload); 
         console.log(json);
         return json;
 
