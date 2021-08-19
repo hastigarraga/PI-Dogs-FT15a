@@ -16,7 +16,7 @@ export default function Home (){
     const [currentPage , setCurrentPage] = useState(1);
     const [order, setOrder] = useState('')
     // eslint-disable-next-line no-unused-vars
-    const [dogsPage, setDogPage] = useState(9); 
+    const [dogsPage, setDogPage] = useState(8); 
     const indexLastDog = currentPage * dogsPage;
     const indexFirstDog = indexLastDog - dogsPage; 
     const currentDog = allDogs.slice(indexFirstDog, indexLastDog);
@@ -27,7 +27,7 @@ export default function Home (){
     };
 
     useEffect(() =>{
-        dispatch(getDogs()) 
+        dispatch(getDogs())  
     },[dispatch])
 
     function handleClick(e){
@@ -62,7 +62,7 @@ export default function Home (){
             <div>
                 <button 
                 className={style.reload}
-                onChange={e=>handleClick(e)}>
+                onClick={e=>handleClick(e)}>
                 Reload all dogs
                 </button><br/>               
                 <select 

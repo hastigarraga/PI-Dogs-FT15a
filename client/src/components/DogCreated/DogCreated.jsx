@@ -6,50 +6,14 @@ import {useState, useEffect} from 'react';
 import style from './DogCreated.module.css'
 
 
-// function validate(input) {
-//     let errors = {};
-//     if (!input.name) {
-//       errors.name = 'Name is required';
-//     } 
-//     if (!input.height) {
-//       errors.height = 'Height is required';
-//     } else if (!/\d{1,2}-\d{1,2}/g.test(input.height)) {
-//         errors.height = "Add a height range. Example: '10-12'"
-//     }
-//     if (!input.weight) {
-//         errors.weight = "Weight is required";
-//     } else if (!/\d{1,2}-\d{1,2}/g.test(input.weight)) {
-//         errors.weight = "Add a weight range. Example: '10-12'"
-//     }
-//     if (!input.life_span) {
-//         errors.life_span = "Life Span is required"
-//     }
-//     if (!input.temperament) {
-//         errors.temperament = "Add at least one temperament"
-//     }
-//     return errors;
-// };
-
 
 export default function DogCreated (){ 
     const dispatch = useDispatch();
     const temperament = useSelector((state) => state.temperament)
-    // const [errors, setErrors] = useState({}); 
-
-    // var heightMax ;
-    // var heightMin;
-    // var weightMax;
-    // var weightMin;
-    
+       
 
     const [input,setInput] = useState({
-        name: "",
-        // heightMax: "",
-        // heightMin: "",
-        // weightMax: "",
-        // weightMin: "",
-        // height: `${heightMax} - ${heightMin}`, 
-        // weight: `${weightMax} - ${weightMin}`,
+        name: "",        
         height: "",
         weight: "",
         life_span: "",
@@ -67,7 +31,7 @@ export default function DogCreated (){
             ...input,
             [e.target.name] : e.target.value
         });
-        // setErrors(validate({...input,[e.target.name]: e.target.value}));
+       
     };
     function handleSelect(e) {
             if (input.temperament.includes(e.target.value)) {
@@ -90,12 +54,6 @@ export default function DogCreated (){
         alert('Doggie created!');
         setInput({
             name: "",
-            // heightMax: "",
-            // heightMin: "",
-            // weightMax: "",
-            // weightMin: "",
-            // height: `${heightMax} - ${heightMin}`, 
-            // weight: `${weightMax} - ${weightMin}`,
             height: "",
             weight: "",
             life_span: "",
@@ -112,7 +70,6 @@ export default function DogCreated (){
                 <fieldset>
                     <legend className={style.legend} >Create your doggie</legend>
                         <div>
-                            {/* <label>Name:</label> */}
                             <input 
                                 key = "name"
                                 className={style.input}
@@ -122,12 +79,9 @@ export default function DogCreated (){
                                 value={input.name}
                                 onChange={(e) => handleChange(e)}
                                 required>                                  
-
-                            {/* {errors.name && (<p className='danger'>{errors.name}</p>)} */}
                             </input>
                         </div>
                         <div>
-                            {/* <label>Height:</label> */}
                             <input 
                                 className={style.input}
                                 placeholder='Height Max - Height Min'
@@ -136,21 +90,10 @@ export default function DogCreated (){
                                 value={input.height}
                                 onChange={(e) => handleChange(e)}
                                 required> 
-                                {/* {errors.name && (<p className={style.danger}>{errors.name}</p>)} */}
                             </input>
-                            {/* <input 
-                                className={style.maxmin}
-                                placeholder='Height Min'
-                                type='text'
-                                name='heightMin'
-                                value={input.heightMin}
-                                onChange={(e) => handleChange(e)}>  
-                                {errors.name && (<p className={style.danger}>{errors.name}</p>)} 
-
-                            </input> */}
+                           
                         </div>
                         <div>
-                            {/* <label>Weight:</label> */}
                             <input 
                                 className={style.input}
                                 placeholder='Weight Max - Weight Min'
@@ -159,22 +102,9 @@ export default function DogCreated (){
                                 value={input.weight}
                                 onChange={(e) => handleChange(e)}
                                 required>  
-                                {/* {errors.name && (<p className={style.danger}>{errors.name}</p>)}  */}
-
                             </input>
-                            {/* <input 
-                                className={style.maxmin}
-                                placeholder='Weight Min'
-                                type='text'
-                                name='weight'
-                                value={input.weight}
-                                onChange={(e) => handleChange(e)}>  
-                                {errors.name && (<p className={style.danger}>{errors.name}</p>)} 
-
-                            </input> */}
                         </div>
                         <div>
-                            {/* <label>Life Span:</label> */}
                             <input 
                                 className={style.input}
                                 placeholder='Life Span'
@@ -183,12 +113,9 @@ export default function DogCreated (){
                                 value={input.life_span}
                                 onChange={(e) => handleChange(e)}
                                 required>
-                                {/* {errors.name && (<p className={style.danger}>{errors.name}</p>)}    */}
-
                             </input>
                         </div>
                         <div>
-                            {/* <label>Image:</label> */}
                             <input 
                                 className={style.input}
                                 placeholder='Image'

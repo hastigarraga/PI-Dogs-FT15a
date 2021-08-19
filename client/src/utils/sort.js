@@ -19,10 +19,7 @@ function sortMayor (a, b) {
 // };
 
 
-module.exports ={
-    sortMayor,
-    // sortMenor
-}
+
 
 /* 
 const dogsOrder = action.payload === 'name' && action.payload === 'Desc' ?
