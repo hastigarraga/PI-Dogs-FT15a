@@ -12,8 +12,8 @@ const apiData = async() => {
         return { 
             id: el.id, 
             name: el.name,
-            height: el.height,
-            weight: el.weight,
+            height: el.height.metric,
+            weight: el.weight.metric,
             life_span: el.life_span,
             imagen: el.image.url, 
             temperament: el.temperament          
