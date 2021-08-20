@@ -81,8 +81,8 @@ function rootReducer(state = initialState, action) {
                         if (a.weight < b.weight) return -1
                         return 0;
                     } else {
-                        if (parseInt(a.weight.metric) > parseInt(b.weight.metric)) return 1
-                        if (parseInt(a.weight.metric) < parseInt(b.weight.metric)) return -1
+                        if (parseInt(a.weight) > parseInt(b.weight)) return 1
+                        if (parseInt(a.weight) < parseInt(b.weight)) return -1
                         return 0;
                     }
                 }) :
@@ -92,8 +92,8 @@ function rootReducer(state = initialState, action) {
                         if (a.weight < b.weight) return 1
                         return 0;
                     } else {
-                        if (parseInt(a.weight.metric) > parseInt(b.weight.metric)) return -1
-                        if (parseInt(a.weight.metric) < parseInt(b.weight.metric)) return 1
+                        if (parseInt(a.weight) > parseInt(b.weight)) return -1
+                        if (parseInt(a.weight) < parseInt(b.weight)) return 1
                         return 0
                     }
                 }); 
