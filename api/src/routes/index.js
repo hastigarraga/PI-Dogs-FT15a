@@ -9,8 +9,8 @@ const temperamentsRouter = require('./temperament');
 const dogCreatedRouter = require('./dogCreated'); 
 const dogIdRouter = require('./dogId');
 
-// Configurar los routers
-// Ejemplo: router.use('/auth', authRouter); 
+// Importar todos los routers;
+// Ejemplo: const authRouter = require('./auth.js');
 router.use("/", dogsRouter); 
 router.use("/" , temperamentsRouter); 
 router.use("/" , dogCreatedRouter); 
