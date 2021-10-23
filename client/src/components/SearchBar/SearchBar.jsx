@@ -21,18 +21,19 @@ export default function SearchBar() {
     }
 
     return (
-        <div className={style.searchBar}>
-            <input 
-            className={style.input}
-            type="text" 
-            placeholder="Enter a breed group..." 
-            value ={name}
-            onChange={(e) => handleInputChange(e)}/>
-            <button 
+        <div class="input-group">
+        <div class="form-outline" style={{marginTop:'-40px'}}>
+          <input type="search" id="form1" class="form-control"  onChange={(e) => handleInputChange(e)} />
+         
+          <button 
             className={style.button}
             type="submit"
             onClick={(e) => handleSubmit(e)}>Search</button>
         </div>
+        
+      </div>
+        
+        
 
     )
 

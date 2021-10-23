@@ -2,7 +2,7 @@ import React from 'react';
 import{ NavLink, Link} from 'react-router-dom';
 import {useState,useEffect} from 'react';
 import {useDispatch,useSelector} from 'react-redux';
-import {getDogs, byOrder, byOrderWeight, filterDogsCreated } from '../../actions';
+import {getDogs, byOrder, byOrderWeight, filterDogsCreated , deleteDog} from '../../actions';
 import Card from '../Card/Card'; 
 import Paged from '../Paged/Paged';
 import style from './Home.module.css'; 
@@ -12,7 +12,8 @@ import SearchBar from '../SearchBar/SearchBar'
 
 export default function Home (){ 
     const dispatch = useDispatch();
-    const allDogs = useSelector((state) => state.dogs);
+    const allDogs = useSelector((state) => state.dogs); 
+    const list = useSelector((state) => state.list)
     const [currentPage , setCurrentPage] = useState(1);
     const [order, setOrder] = useState('')
     // eslint-disable-next-line no-unused-vars
@@ -28,6 +29,7 @@ export default function Home (){
 
     useEffect(() =>{
         dispatch(getDogs())  
+        // deleteDog(id)
     },[dispatch])
 
     function handleClick(e){
@@ -53,10 +55,64 @@ export default function Home (){
         setCurrentPage(1);
         setOrder(e.target.value)
     }
+    // async function handleDeleteDog  (id) {
+    //     await dispatch(deleteDog(id)) 
+    //     window.location.reload();
+    //     // allDogs = allDogs.filter(d => d.id !== id)
+    // }
     
     return ( 
-        <div>
-            <div className={style.created} >
+        <div className={ style.bod}>
+        <div className={style.bod2}>
+                    <div className = {style.bar}> 
+                    <div className={style.cajon} style={{width:'18%'}}>
+                        <Link className={style.button2} style={{ textDecoration: 'none'}} to = '/dog'>Create Doggie</Link> 
+                        <button     
+                            className={style.button2}                         
+                            onClick={e=>handleClick(e)}>
+                            Reload all dogs
+                        </button> 
+                        <select 
+                            
+                            className={style.button2} 
+                            onClick={e=>handlerFilter(e)} >
+                    
+
+                                <option 
+                                    value='All'
+                                    className={style.selectOption}
+                                    >All</option>
+                                <option 
+                                    value='Created'
+                                    className={style.selectOption}
+                                    >Created</option>
+                            {/* <option value='Breed'>Api</option> */}
+                                
+
+                        </select> 
+
+                    </div>
+                    <div className={style.cajon} >
+                        <button className={style.button} onClick={(e) => handleOrder(e)} value="Asc">A-Z</button>
+                            <button className={style.button} onClick={(e) => handleOrder(e)} value='Desc'>Z-A</button>
+                            <button className={style.button} onClick={(e) => handleOrderByWeight(e)} value= 'Weight 1'>SMALL</button>
+                            <button className={style.button} onClick={(e) => handleOrderByWeight(e)} value= 'Weight 2'>BIG</button>
+
+                    </div>
+                   
+                            
+                            
+                        
+                    </div>
+                        <div className={style.up}  >
+                            <SearchBar/> 
+                            </div>      
+                    
+
+                    
+                
+                
+            {/* <div className={style.created} >
                 <Link style={{ textDecoration: 'none'}} to = '/dog'>Create Doggie</Link>            
             </div>
             <div>
@@ -70,18 +126,23 @@ export default function Home (){
                 className={style.temptContainer}>
                     <option value='All'>All</option>
                     <option value='Created'>Created</option>
-                    {/* <option value='Breed'>Api</option> */}
+                    
                 </select>
-                <SearchBar/>            
+                           
                 <button className={style.button} onClick={(e) => handleOrder(e)} value="Asc">A-Z</button>
                 <button className={style.button} onClick={(e) => handleOrder(e)} value='Desc'>Z-A</button>
                 <button className={style.button} onClick={(e) => handleOrderByWeight(e)} value= 'Weight 1'>SMALL</button>
                 <button className={style.button} onClick={(e) => handleOrderByWeight(e)} value= 'Weight 2'>BIG</button>
-            </div>       
-            <div className={style.direccion}>
+            </div>        */}
+
+            
+            <div className={style.direccion}> 
                 {currentDog?.map((el) =>{
                     return(
                         <div className={style.contenedor} > 
+                       
+                                {/* <button  style={{ backgroundColor: 'red',color: 'white' }} onClick={handleDeleteDog}className="btn btn-sm btn-danger">X</button> */}
+                           
                             <NavLink style={{ textDecoration: 'none' }} to ={ '/home' + el.id }>
                             <Card name  = {el.name} 
                                 image = {el.image? el.image : el.imagen}
@@ -98,10 +159,12 @@ export default function Home (){
                     allDogs = {allDogs.length}
                     pagedTotal = {pagedTotal}
                 />
-            </div>
+            </div><br/>
             <div>
             <Link to='/'><button className={style.back} >Back</button></Link>
             </div>
+
+        </div>
         </div> 
         
         

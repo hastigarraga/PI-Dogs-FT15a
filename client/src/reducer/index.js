@@ -4,7 +4,8 @@ const initialState = {
     orderDogs : [],
     weightDogs : [], 
     temperament : [],
-    detail : [],
+    detail : [], 
+    list: [],
 
 };
 
@@ -100,6 +101,17 @@ function rootReducer(state = initialState, action) {
                 return {
                     ...state,
                     dogs: weightDogs
+                } 
+                case "CLEAR_DOG_DETAIL":
+                    return {
+                        ...state,
+                        detail: action.payload
+                    } 
+                case "DELETE_DOG":
+                    return {
+                        ...state, 
+                        allDogs: state.allDogs.filter((l)=> l.id !== action.payload)
+
                 }
             
                 

@@ -46,6 +46,12 @@ export default function DogCreated (){
             }
         
     }
+    function handleClose(e){
+        setInput({
+            ...input,
+            temperament: input.temperament.filter(temp => temp !== e)
+        })
+    }
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -140,6 +146,8 @@ export default function DogCreated (){
                                 {
                                     temperament?.map((e) => (
                                         <option  
+                                        
+                                        onClick={() => handleClose(e)}
                                             className={style.l}                                          
                                             value={e.name} 
                                             key={e.id}>                                                                                            
@@ -151,14 +159,18 @@ export default function DogCreated (){
                             <ul>
                                 <li className={style.li}>{input.temperament.map(i => i + ", ")}</li>
                             </ul>                                          
+                        </div> 
+                        <div className={style.divBtn}>
+                            <button className={style.back}>
+                                <Link style={{ textDecoration: 'none' }} to ='/home'>Back</Link><br/>              
+                            </button>
+                            <button 
+                                className={style.back} 
+                                type= "submit" 
+                                name= "submit" 
+                                >Create
+                            </button>
                         </div>
-                        <button 
-                            className={style.submit} 
-                            type= "submit" 
-                            name= "submit" 
-                            >Create
-                        </button>
-                        <Link to='/home'><button className={style.back} >Back</button></Link><br/>                
                 </fieldset>                
             </form>
         </div>

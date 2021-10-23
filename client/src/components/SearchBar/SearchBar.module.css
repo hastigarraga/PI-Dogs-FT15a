@@ -1,9 +1,9 @@
 .searchBar {
-    background-color: whitesmoke;
+    /* background-color: whitesmoke; */
     margin-left: 23px;
     margin-top: -80px;
     border: none;  
-    border-radius: 5px;
+    border-radius: 55px;
     width: 250px;
     height: 40px;
     display: top;
@@ -12,30 +12,39 @@
 }
 
 .button {
-    background: transparent; 
-    border: transparent;
-    color: black;
+    /* background: transparent;  */
+    /* border: transparent; */
+    background-color: #117897;
+    color: white;
     margin-top: 3%; 
     margin-left: 25px;
-    
+    padding: 5px 5px; 
+    border-radius: 5px;
     
 }
 
 .button:hover {
-    padding: 7px;
-    background-color: wheat;
-    color: black;
-    /* margin: -2px; */
+    /* padding: 1px; */
+    background-color: white;
+    color: #117897;
+    /* margin: -2px; */ 
+    
 }
+
+
 .input{
     margin-top: 10px;
     margin-left: 20px;
     border-color: rgba(240, 248, 255, 0);
     background: transparent; 
-    border: none;
+    
     font-family:'Gill Sans';
     
     
+    
+} 
+input {
+    border-radius: 5px;
 }
 
 

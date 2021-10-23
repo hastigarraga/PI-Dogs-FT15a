@@ -16,7 +16,7 @@ router.get('/dogs', async (req, res) => {
         res.status(200).send(dogsTotal);
     }
 
+    // console.log(dogsTotal)
 });  
-
 
 module.exports = router;

@@ -80,3 +80,22 @@ export function byOrderWeight(payload) {
     }
 };
 
+export function clearDogDetail() {
+    return function(dispatch) {
+        dispatch({
+            type: "CLEAR_DOG_DETAIL",
+            payload: {}
+        })
+    }
+}
+ 
+export function deleteDog(id){
+    return async function(dispatch) {
+        var json = await axios.delete("http://localhost:3001/dogs/", id); 
+        return dispatch({
+            type: "DELETE_DOG",
+            payload: json.data
+
+        })
+    }
+}
